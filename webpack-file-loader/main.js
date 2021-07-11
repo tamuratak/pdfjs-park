@@ -6,7 +6,7 @@ import pdfjsWorker from 'file-loader!pdfjs-dist/build/pdf.worker';
 
 const pdfjsLib = require("pdfjs-dist");
 
-const pdfPath = "/compressed.tracemonkey-pldi-09.pdf";
+const pdfPath = "/abc.pdf";
 
 // Setting worker path to worker bundle.
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
