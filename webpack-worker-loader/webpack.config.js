@@ -13,7 +13,9 @@ module.exports = {
     filename: "[name].bundle.js",
   },
   devServer: {
-    contentBase: __dirname,
+    static: {
+      directory: __dirname
+    },
     compress: true,
     historyApiFallback: true, // respond to 404s with index.html
     host: 'localhost',
