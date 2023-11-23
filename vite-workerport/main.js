@@ -7,7 +7,10 @@ import * as pdfjsLib from "pdfjs-dist";
 
 const pdfPath = "/abc.pdf";
 
-const worker = new Worker(new URL('./node_modules/pdfjs-dist/build/pdf.worker.mjs', import.meta.url), { type: 'module' });
+const worker = new Worker(
+  new URL('./node_modules/pdfjs-dist/build/pdf.worker.mjs', import.meta.url),
+  { type: 'module' }
+);
 // Setting worker path to worker bundle.
 pdfjsLib.GlobalWorkerOptions.workerPort = worker;
 
