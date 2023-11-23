@@ -3,16 +3,18 @@
 
 // Hello world example for webpack.
 
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
+import * as pdfjsLib from "pdfjs-dist";
 
 const pdfPath = "/abc.pdf";
 
-const worker = new Worker(new URL('./node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs', import.meta.url), { type: 'module' });
+const worker = new Worker(new URL('./node_modules/pdfjs-dist/build/pdf.worker.mjs', import.meta.url), { type: 'module' });
 // Setting worker path to worker bundle.
 pdfjsLib.GlobalWorkerOptions.workerPort = worker;
 
+
 // Loading a document.
 const loadingTask = pdfjsLib.getDocument(pdfPath);
+
 loadingTask.promise
   .then(function (pdfDocument) {
     // Request a first page
@@ -32,4 +34,4 @@ loadingTask.promise
   })
   .catch(function (reason) {
     console.error("Error: " + reason);
-  });
+  })
