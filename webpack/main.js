@@ -3,12 +3,9 @@
 
 // Hello world example for webpack.
 
-const pdfjsLib = require("pdfjs-dist");
+import * as pdfjsLib from "pdfjs-dist/webpack.mjs"
 
-const pdfPath = "/abc.pdf";
-
-// Setting worker path to worker bundle.
-pdfjsLib.GlobalWorkerOptions.workerSrc = "./build/pdf.worker.bundle.js";
+const pdfPath = "./abc.pdf";
 
 // Loading a document.
 const loadingTask = pdfjsLib.getDocument(pdfPath);
